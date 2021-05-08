@@ -1,0 +1,14 @@
+{
+  "name": "webtest",
+  "version": "0.1.0",
+  "description": "for web test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.11.2"
+  }
+}
