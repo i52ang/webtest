@@ -9,20 +9,24 @@ body {
     font: 16px/1.8 "Microsoft Yahei", verdana;
 }
 
+img {
+    width: 100%;
+}
+
 /* 右侧导航 */
-#fullPage-nav {
+#fp-nav {
     _display: none;
     font-size: 12px;
 }
 
-#fullPage-nav li {
+#fp-nav li {
     width: 90px;
     height: 21px;
     margin: 10px 0 0;
     vertical-align: middle;
 }
 
-#fullPage-nav li a {
+#fp-nav li a {
     float: right;
     width: 21px;
     height: 21px;
@@ -32,11 +36,11 @@ body {
     background: url(./images/dot.png) 5px 5px no-repeat;
 }
 
-#fullPage-nav li .active {
+#fp-nav li .active {
     background-position: 0 bottom;
 }
 
-#fullPage-nav span {
+#fp-nav span {
     display: none;
 }
 
@@ -659,7 +663,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url(./images/bg101.png) 50% 20% no-repeat;
+    /* background: url(./images/bg101.png) 50% 20% no-repeat; */
 }
 
 .bg102 {
@@ -667,10 +671,10 @@ body {
     width: 100%;
     top: 25%;
     height: 79px;
-    background: url(./images/bg102.png) 50% 0 no-repeat;
+    /* background: url(./images/bg102.png) 50% 0 no-repeat; */
     opacity: 0;
-    -webkit-transform: scale(0.5, 0.5);
-    transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.1, 0.1);
+    transform: scale(0.1, 0.1);
     transition: all 1s;
 }
 
@@ -680,39 +684,41 @@ body {
     top: 25%;
     height: 37px;
     margin-top: 110px;
-    background: url(./images/bg103.png) 50% 0 no-repeat;
+    /* background: url(./images/bg103.png) 50% 0 no-repeat; */
     opacity: 0;
-    -webkit-transform: scale(0.5, 0.5);
-    transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.1, 0.1);
+    transform: scale(0.1, 0.1);
     transition: all 1s;
 }
 
 .go {
     position: absolute;
     left: 50%;
-    top: 55%;
+    top: 100%;
     width: 254px;
     height: 70px;
-    margin-top: 220px;
+    /* margin-top: 220px; */
     margin-left: -127px;
-    text-indent: -9999px;
-    background-image: url(./images/btn.png);
+    /* text-indent: -9999px; */
+    /* background-image: url(./images/btn.png); */
     opacity: 0;
     transition: all 1s;
 }
 
+
+
 .copyright {
     position: absolute;
     left: 0;
-    bottom: 20px;
+    bottom: 1.6666666666666667em;
     width: 100%;
     text-align: center;
-    font-size: 0;
+    font-size: 0.75em;
 }
 
 .copyright a, .copyright span {
     margin: 0 7px;
-    font-size: 12px;
+    /* font-size: 12px; */
     color: #a0a0a0;
 }
 
@@ -912,13 +918,15 @@ body {
 
 .active .bg102, .active .bg103 {
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
+    -webkit-transform: scale(0.3, 0.3);
+    transform: scale(0.3, 0.3);
+    /* -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); */
     transition-delay: 0.7s;
 }
 
 .active .go {
-    top: 25%;
+    top: 70%;
     opacity: 1;
     transition-delay: 1.2s;
 }
@@ -1128,4 +1136,27 @@ body {
     transition-delay: 1.2s;
 }
 
-/* 代码整理；懒人之家 www.lanrenzhijia.com */
+
+
+
+@media screen and (max-width: 600px) {
+
+    .bg102, .bg103 {
+        -webkit-transform: scale(0.3, 0.);
+        transform: scale(0.3, 0.3);
+    }
+
+    .bg103 {
+        margin-top: 70px;
+    }
+    
+    .active .bg102, .active .bg103 {
+        -webkit-transform: scale(0.7, 0.7);
+        transform: scale(0.7, 0.7);
+    }
+
+    .go {
+        -webkit-transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+    }
+}
