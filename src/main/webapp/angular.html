@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-app="app" class="body">
+    <div ng-controller="AngularCtrl">
+        <div>{{ largeObject.length }}</div>
+        <button ng-click="alloc()" type="button" class="btn btn-default">alloc</button>
+        <button ng-click="free()" type="button" class="btn btn-default">free</button>
+        <button ng-click="modal()" type="button" class="btn btn-default">modal</button>
+    </div>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="angular/angular.js"></script>
+
+    <script type="text/ng-template" id="modal">
+        <div>{{ modalLargeObject.length }}</div>
+        <div length-directive obj="modalLargeObject"></div>
+        <button ng-click="close()" type="button" class="btn btn-default">close</button>
+    </script>
+</body>
+</html>
