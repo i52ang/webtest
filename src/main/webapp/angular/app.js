@@ -1,4 +1,18 @@
-var app = angular.module('app', ['ui.bootstrap']);
+var app = angular.module('app', ['ui.bootstrap', 'ui.router', 'material']);
+
+function config($stateProvider) {
+    $stateProvider.state('home', {
+        url : '/home',
+        templateUrl : 'angular/views/home.html',
+        controller: 'HomeCtrl'
+    });
+    $stateProvider.state('test', {
+        url : '/test',
+        templateUrl : 'angular/views/test.html',
+        controller: 'TestCtrl'
+    });
+}
+app.config(config);
 
 function AngularCtrl($scope, $modal) {
     $scope.alloc = function alloc() {
@@ -11,7 +25,7 @@ function AngularCtrl($scope, $modal) {
 
     $scope.modal = function modal() {
         $modal.open({
-            templateUrl: 'modal',
+            templateUrl: 'angular/views/modal.html',
             controller: 'ModalCtrl'
         }).result.then(function() {
             console.info('close');
@@ -19,6 +33,14 @@ function AngularCtrl($scope, $modal) {
             console.info('dismiss');
         });
     };
+
+    $scope.menus = [{
+        id: 1,
+        state: 'home'
+    }, {
+        id: 2,
+        state: 'test'
+    }];
 }
 app.controller('AngularCtrl', AngularCtrl);
 
@@ -30,6 +52,14 @@ function ModalCtrl($scope, $modalInstance) {
     };
 }
 app.controller('ModalCtrl', ModalCtrl);
+
+function HomeCtrl($scope) {
+}
+app.controller('HomeCtrl', HomeCtrl);
+
+function TestCtrl($scope) {
+}
+app.controller('TestCtrl', TestCtrl);
 
 function LengthDirective() {
     return {

@@ -2,22 +2,38 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/material-wfont.css">
+    <link rel="stylesheet" type="text/css" href="angular/app.css">
 </head>
 <body ng-app="app" class="body">
     <div ng-controller="AngularCtrl">
-        <div>{{ largeObject.length }}</div>
+        <div class="btn btn-link">
+            <a href="">Link Test</a>
+        </div>
+
         <button ng-click="alloc()" type="button" class="btn btn-default">alloc</button>
-        <button ng-click="free()" type="button" class="btn btn-default">free</button>
+        <button ng-if="largeObject" ng-click="free()" type="button" class="btn btn-default">free {{ largeObject.length }}</button>
         <button ng-click="modal()" type="button" class="btn btn-default">modal</button>
+
+        <div class="navbar navbar-fixed-top">
+            <ul class="nav navbar-nav">
+                <li ng-repeat="menu in menus track by menu.id">
+                    <a ui-sref="{{ menu.state }}">{{ menu.state }}</a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input class="form-control col-lg-8" placeholder="Search"/>
+            </form>
+        </div>
+
+        <div ui-view></div>
     </div>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script type="text/javascript" src="angular/angular.js"></script>
-
-    <script type="text/ng-template" id="modal">
-        <div>{{ modalLargeObject.length }}</div>
-        <div length-directive obj="modalLargeObject"></div>
-        <button ng-click="close()" type="button" class="btn btn-default">close</button>
-    </script>
+    <script type="text/javascript" src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script type="text/javascript" src="angular/material.js"></script>
+    <script type="text/javascript" src="angular/app.js"></script>
 </body>
 </html>
